@@ -18,6 +18,10 @@ public class Stack {
         //raise_container(container_id)
     }
     
+    public func pop() -> Int32? {
+        return nil
+    }
+    
     public func contains(container_id: Int32) -> Bool {
         return containers.contains(container_id)
     }

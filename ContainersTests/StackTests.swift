@@ -23,6 +23,10 @@ class StackTests: QuickSpec {
                 expect(stack.top).to(beNil())
             }
             
+            it("Returns null when popping a container") {
+                expect(stack.pop()).to(beNil())
+            }
+            
             describe("after adding a container") {
                 
                 beforeEach({ () -> () in
