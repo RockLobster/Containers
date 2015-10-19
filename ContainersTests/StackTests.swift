@@ -56,6 +56,14 @@ class StackTests: QuickSpec {
                     it("pop returns the id of the container") {
                         expect(poppedContainerId).to(equal(666))
                     }
+                    
+                    it("is empty afterwards") {
+                        expect(stack.count).to(equal(0))
+                    }
+                    
+                    it("does not contain the container anymore") {
+                        expect(stack.contains(666)).to(beFalse())
+                    }
                 }
             }
             
