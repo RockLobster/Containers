@@ -36,12 +36,31 @@ class StackTests: QuickSpec {
                 it("has the new container on top") {
                     expect(stack.top).to(equal(666))
                 }
+                
+                it("contains the added container") {
+                    expect(stack.contains(666)).to(beTrue())
+                }
             }
             
-            it("can put multiple containers on top") {
-                stack.push(2)
-                stack.push(3)
-                expect(stack.count).to(equal(2))
+            describe("after adding multiple containers") {
+                
+                beforeEach({ () -> () in
+                    stack.push(123)
+                    stack.push(56789)
+                })
+                
+                it("has a container count of two") {
+                    expect(stack.count).to(equal(2))
+                }
+                
+                it("has the last added container as top") {
+                    expect(stack.top).to(equal(56789))
+                }
+                
+                it("contains the added containers") {
+                    expect(stack.contains(123)).to(beTrue())
+                    expect(stack.contains(56789)).to(beTrue())
+                }
             }
         }
     }

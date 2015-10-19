@@ -3,7 +3,10 @@ import Foundation
 public class Stack {
 
     public var count = 0
-    public var top: Int?
+    var containers = [Int]()
+    public var top: Int? {
+        return containers.last
+    }
     
     public init() {
 
@@ -11,6 +14,10 @@ public class Stack {
 
     public func push(container_id: Int) {
         count++
-        top = container_id
+        containers.append(container_id)
+    }
+    
+    public func contains(container_id: Int) -> Bool {
+        return containers.contains(container_id)
     }
 }
