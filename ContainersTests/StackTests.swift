@@ -1,6 +1,24 @@
 import Quick
 import Nimble
-import Containers
+@testable import Containers
+
+class CraneMock : CraneWrapper {
+    
+    var raisedContainers = [Int32]()
+    var loweredContainers = [Int32]()
+    
+    override init() {
+        super.init()
+    }
+    
+    override func raise(containerId: Int32) {
+        raisedContainers.append(containerId)
+    }
+    
+    override func lower(containerId: Int32) {
+        
+    }
+}
 
 class StackTests: QuickSpec {
 
@@ -8,11 +26,13 @@ class StackTests: QuickSpec {
         
         describe("stack") {
             
+            var crane: CraneMock!
             var stack: Stack!
             
-            beforeEach({ () -> () in
-                stack = Stack()
-            })
+            beforeEach {
+                crane = CraneMock()
+                stack = Stack(crane: crane)
+            }
             
             it("can be created") {
                 expect(stack).toNot(beNil())
@@ -43,6 +63,10 @@ class StackTests: QuickSpec {
                 
                 it("contains the added container") {
                     expect(stack.contains(666)).to(beTrue())
+                }
+                
+                it("should tell the crane to raise the container") {
+                    expect(crane.raisedContainers).to(contain(Int32(666)))
                 }
                 
                 describe("and pop gets called") {
@@ -91,9 +115,9 @@ class StackTests: QuickSpec {
                     
                     var poppedContainerId : Int32?
                     
-                    beforeEach({ () -> () in
+                    beforeEach {
                         poppedContainerId = stack.pop()
-                    })
+                    }
                     
                     it("pop returns the id of the last added container") {
                         expect(poppedContainerId).to(equal(56789))

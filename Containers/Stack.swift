@@ -3,6 +3,7 @@ import Foundation
 public class Stack {
 
     var containers = [Int32]()
+    let crane: CraneWrapper
     
     public var count: Int {
         return containers.count
@@ -11,13 +12,13 @@ public class Stack {
         return containers.last
     }
     
-    public init() {
-
+    public init(crane: CraneWrapper) {
+        self.crane = crane
     }
 
     public func push(container_id: Int32) {
+        self.crane.raise(container_id)
         containers.append(container_id)
-        //raise_container(container_id)
     }
     
     public func pop() -> Int32? {

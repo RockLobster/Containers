@@ -16,6 +16,7 @@
 		5CC458CC1BCFD781000A550F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CC458CA1BCFD781000A550F /* LaunchScreen.storyboard */; };
 		5CC458D71BCFD781000A550F /* StackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC458D61BCFD781000A550F /* StackTests.swift */; };
 		6F75C4F700F4D5EE934459B6 /* Pods_ContainersTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A64240797CD95F1AEE71B09 /* Pods_ContainersTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		8708970A1BD55EFE00FCE60A /* CraneWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870897091BD55EFE00FCE60A /* CraneWrapper.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		5CC458D21BCFD781000A550F /* ContainersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ContainersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CC458D61BCFD781000A550F /* StackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackTests.swift; sourceTree = "<group>"; };
 		5CC458D81BCFD781000A550F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		870897091BD55EFE00FCE60A /* CraneWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CraneWrapper.swift; sourceTree = "<group>"; };
 		93F67D946944ABBB4106F64A /* Pods-ContainersTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContainersTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ContainersTests/Pods-ContainersTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C54B5A059AEB0E72352C86AE /* Pods-ContainersTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContainersTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ContainersTests/Pods-ContainersTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -97,6 +99,7 @@
 				5CC458CA1BCFD781000A550F /* LaunchScreen.storyboard */,
 				5CC458CD1BCFD781000A550F /* Info.plist */,
 				5C3254E91BD2EA15009126E4 /* Stack.swift */,
+				870897091BD55EFE00FCE60A /* CraneWrapper.swift */,
 				5CC209C11BD01E5E00551774 /* Crane.c */,
 				5CC209C21BD01E5E00551774 /* Crane.h */,
 				5CC209C01BD01E5E00551774 /* Containers-Bridging-Header.h */,
@@ -283,6 +286,7 @@
 			files = (
 				5CC458C41BCFD781000A550F /* ViewController.swift in Sources */,
 				5C3254EA1BD2EA15009126E4 /* Stack.swift in Sources */,
+				8708970A1BD55EFE00FCE60A /* CraneWrapper.swift in Sources */,
 				5CC209C31BD01E5E00551774 /* Crane.c in Sources */,
 				5CC458C21BCFD781000A550F /* AppDelegate.swift in Sources */,
 			);
