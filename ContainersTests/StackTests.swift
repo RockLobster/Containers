@@ -86,6 +86,31 @@ class StackTests: QuickSpec {
                     expect(stack.contains(123)).to(beTrue())
                     expect(stack.contains(56789)).to(beTrue())
                 }
+                
+                describe("and pop gets called") {
+                    
+                    var poppedContainerId : Int32?
+                    
+                    beforeEach({ () -> () in
+                        poppedContainerId = stack.pop()
+                    })
+                    
+                    it("pop returns the id of the last added container") {
+                        expect(poppedContainerId).to(equal(56789))
+                    }
+                    
+                    it("contains only one container afterwards") {
+                        expect(stack.count).to(equal(1))
+                    }
+                    
+                    it("does not contain the last added container anymore") {
+                        expect(stack.contains(56789)).to(beFalse())
+                    }
+                    
+                    it("has the first container as top container") {
+                        expect(stack.top).to(equal(123))
+                    }
+                }
             }
         }
     }
