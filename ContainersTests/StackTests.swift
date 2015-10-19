@@ -49,36 +49,39 @@ class StackTests: QuickSpec {
             
             describe("after adding a container") {
                 
-                beforeEach({ () -> () in
-                    stack.push(666)
-                })
+                var singleContainer: Container!
+                
+                beforeEach {
+                    singleContainer = SimpleContainer(id: 666)
+                    stack.push(singleContainer)
+                }
                 
                 it("has a container count of one") {
                     expect(stack.count).to(equal(1))
                 }
                 
                 it("has the new container on top") {
-                    expect(stack.top).to(equal(666))
+                    expect(stack.top?.containerId()).to(equal(singleContainer.containerId()))
                 }
                 
                 it("contains the added container") {
-                    expect(stack.contains(666)).to(beTrue())
+                    expect(stack.contains(singleContainer)).to(beTrue())
                 }
                 
                 it("should tell the crane to raise the container") {
-                    expect(crane.raisedContainers).to(contain(Int32(666)))
+                    expect(crane.raisedContainers).to(contain(singleContainer.containerId()))
                 }
                 
                 describe("and pop gets called") {
                     
-                    var poppedContainerId : Int32?
+                    var poppedContainer : Container?
                     
                     beforeEach({ () -> () in
-                        poppedContainerId = stack.pop()
+                        poppedContainer = stack.pop()
                     })
                     
                     it("pop returns the id of the container") {
-                        expect(poppedContainerId).to(equal(666))
+                        expect(poppedContainer?.containerId()).to(equal(singleContainer.containerId()))
                     }
                     
                     it("is empty afterwards") {
@@ -86,45 +89,50 @@ class StackTests: QuickSpec {
                     }
                     
                     it("does not contain the container anymore") {
-                        expect(stack.contains(666)).to(beFalse())
+                        expect(stack.contains(singleContainer)).to(beFalse())
                     }
                     
                     it("should tell the crane to lower the container") {
-                        expect(crane.loweredContainers).to(contain(Int32(666)))
+                        expect(crane.loweredContainers).to(contain(singleContainer.containerId()))
                     }
                 }
             }
             
             describe("after adding multiple containers") {
                 
-                beforeEach({ () -> () in
-                    stack.push(123)
-                    stack.push(56789)
-                })
+                var container1: Container!
+                var container2: Container!
+                
+                beforeEach {
+                    container1 = SimpleContainer(id: 123)
+                    container2 = SimpleContainer(id: 56789)
+                    stack.push(container1)
+                    stack.push(container2)
+                }
                 
                 it("has a container count of two") {
                     expect(stack.count).to(equal(2))
                 }
                 
                 it("has the last added container as top") {
-                    expect(stack.top).to(equal(56789))
+                    expect(stack.top?.containerId()).to(equal(container2.containerId()))
                 }
                 
                 it("contains the added containers") {
-                    expect(stack.contains(123)).to(beTrue())
-                    expect(stack.contains(56789)).to(beTrue())
+                    expect(stack.contains(container1)).to(beTrue())
+                    expect(stack.contains(container2)).to(beTrue())
                 }
                 
                 describe("and pop gets called") {
                     
-                    var poppedContainerId : Int32?
+                    var poppedContainer : Container?
                     
                     beforeEach {
-                        poppedContainerId = stack.pop()
+                        poppedContainer = stack.pop()
                     }
                     
                     it("pop returns the id of the last added container") {
-                        expect(poppedContainerId).to(equal(56789))
+                        expect(poppedContainer?.containerId()).to(equal(container2.containerId()))
                     }
                     
                     it("contains only one container afterwards") {
@@ -132,11 +140,11 @@ class StackTests: QuickSpec {
                     }
                     
                     it("does not contain the last added container anymore") {
-                        expect(stack.contains(56789)).to(beFalse())
+                        expect(stack.contains(container2)).to(beFalse())
                     }
                     
                     it("has the first container as top container") {
-                        expect(stack.top).to(equal(123))
+                        expect(stack.top?.containerId()).to(equal(container1.containerId()))
                     }
                 }
             }

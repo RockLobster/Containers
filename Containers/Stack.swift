@@ -2,13 +2,13 @@ import Foundation
 
 public class Stack {
 
-    var containers = [Int32]()
+    var containers = [Container]()
     let crane: CraneWrapper
     
     public var count: Int {
         return containers.count
     }
-    public var top: Int32? {
+    public var top: Container? {
         return containers.last
     }
     
@@ -16,22 +16,25 @@ public class Stack {
         self.crane = crane
     }
 
-    public func push(container_id: Int32) {
-        self.crane.raise(container_id)
-        containers.append(container_id)
+    public func push(container: Container) {
+        self.crane.raise(container.containerId())
+        containers.append(container)
     }
     
-    public func pop() -> Int32? {
-        let poppedContainerId = containers.popLast()
+    public func pop() -> Container? {
+        let poppedContainer = containers.popLast()
         
-        if let unwrappedContainerId = poppedContainerId {
-            self.crane.lower(unwrappedContainerId)
+        if let unwrappedContainer = poppedContainer {
+            self.crane.lower(unwrappedContainer.containerId())
         }
         
-        return poppedContainerId
+        return poppedContainer
     }
     
-    public func contains(container_id: Int32) -> Bool {
-        return containers.contains(container_id)
+    public func contains(container: Container) -> Bool {
+        
+        return containers.contains({ (otherContainer: Container) -> Bool in
+            return otherContainer.containerId() == container.containerId()
+        })
     }
 }
