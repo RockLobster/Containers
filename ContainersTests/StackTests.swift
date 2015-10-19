@@ -20,11 +20,22 @@ class StackTests: QuickSpec {
             
             it("is empty after creation") {
                 expect(stack.count).to(equal(0))
+                expect(stack.top).to(beNil())
             }
-
-            it("can put a container on top") {
-                stack.push(0)
-                expect(stack.count).to(equal(1))
+            
+            describe("after adding a container") {
+                
+                beforeEach({ () -> () in
+                    stack.push(666)
+                })
+                
+                it("has a container count of one") {
+                    expect(stack.count).to(equal(1))
+                }
+                
+                it("has the new container on top") {
+                    expect(stack.top).to(equal(666))
+                }
             }
             
             it("can put multiple containers on top") {
