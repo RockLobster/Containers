@@ -30,7 +30,7 @@ You'll work by first creating a test and making sure it fails. Next you'll imple
 
 Make sure that during this exercise you commit early and often. Making small commits will help you backtrack in case something goes awry, and helps you to analyse what you did later on.
 
-![Shipping Containers](ShippingContainers.jpg)
+[![Shipping Containers](ShippingContainers.jpg)](https://commons.wikimedia.org/wiki/File:Speybank_by_Luc_Deleu.jpg)
 
 The challenge
 -------------

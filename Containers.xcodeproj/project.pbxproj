@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5C3254EA1BD2EA15009126E4 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3254E91BD2EA15009126E4 /* Stack.swift */; settings = {ASSET_TAGS = (); }; };
+		5C3254EC1BD2EE24009126E4 /* ContainerBrands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3254EB1BD2EE24009126E4 /* ContainerBrands.swift */; settings = {ASSET_TAGS = (); }; };
 		5CC209C31BD01E5E00551774 /* Crane.c in Sources */ = {isa = PBXBuildFile; fileRef = 5CC209C11BD01E5E00551774 /* Crane.c */; settings = {ASSET_TAGS = (); }; };
 		5CC458C21BCFD781000A550F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC458C11BCFD781000A550F /* AppDelegate.swift */; };
 		5CC458C41BCFD781000A550F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC458C31BCFD781000A550F /* ViewController.swift */; };
@@ -32,6 +33,7 @@
 /* Begin PBXFileReference section */
 		1A64240797CD95F1AEE71B09 /* Pods_ContainersTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ContainersTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C3254E91BD2EA15009126E4 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		5C3254EB1BD2EE24009126E4 /* ContainerBrands.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerBrands.swift; sourceTree = "<group>"; };
 		5CC209C01BD01E5E00551774 /* Containers-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Containers-Bridging-Header.h"; sourceTree = "<group>"; };
 		5CC209C11BD01E5E00551774 /* Crane.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Crane.c; sourceTree = "<group>"; };
 		5CC209C21BD01E5E00551774 /* Crane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Crane.h; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				5CC209C11BD01E5E00551774 /* Crane.c */,
 				5CC209C21BD01E5E00551774 /* Crane.h */,
 				5CC209C01BD01E5E00551774 /* Containers-Bridging-Header.h */,
+				5C3254EB1BD2EE24009126E4 /* ContainerBrands.swift */,
 			);
 			path = Containers;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 				5CC458C41BCFD781000A550F /* ViewController.swift in Sources */,
 				5C3254EA1BD2EA15009126E4 /* Stack.swift in Sources */,
 				8708970A1BD55EFE00FCE60A /* CraneWrapper.swift in Sources */,
+				5C3254EC1BD2EE24009126E4 /* ContainerBrands.swift in Sources */,
 				5CC209C31BD01E5E00551774 /* Crane.c in Sources */,
 				5CC458C21BCFD781000A550F /* AppDelegate.swift in Sources */,
 			);
