@@ -44,6 +44,19 @@ class StackTests: QuickSpec {
                 it("contains the added container") {
                     expect(stack.contains(666)).to(beTrue())
                 }
+                
+                describe("and pop gets called") {
+                    
+                    var poppedContainerId : Int32?
+                    
+                    beforeEach({ () -> () in
+                        poppedContainerId = stack.pop()
+                    })
+                    
+                    it("pop returns the id of the container") {
+                        expect(poppedContainerId).to(equal(666))
+                    }
+                }
             }
             
             describe("after adding multiple containers") {

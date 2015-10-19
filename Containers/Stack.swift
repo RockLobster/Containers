@@ -19,7 +19,8 @@ public class Stack {
     }
     
     public func pop() -> Int32? {
-        return nil
+        let returnValue = containers.last
+        return returnValue;
     }
     
     public func contains(container_id: Int32) -> Bool {
