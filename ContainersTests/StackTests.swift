@@ -16,7 +16,7 @@ class CraneMock : CraneWrapper {
     }
     
     override func lower(containerId: Int32) {
-        
+        loweredContainers.append(containerId)
     }
 }
 
@@ -87,6 +87,10 @@ class StackTests: QuickSpec {
                     
                     it("does not contain the container anymore") {
                         expect(stack.contains(666)).to(beFalse())
+                    }
+                    
+                    it("should tell the crane to lower the container") {
+                        expect(crane.loweredContainers).to(contain(Int32(666)))
                     }
                 }
             }

@@ -22,7 +22,13 @@ public class Stack {
     }
     
     public func pop() -> Int32? {
-        return containers.popLast()
+        let poppedContainerId = containers.popLast()
+        
+        if let unwrappedContainerId = poppedContainerId {
+            self.crane.lower(unwrappedContainerId)
+        }
+        
+        return poppedContainerId
     }
     
     public func contains(container_id: Int32) -> Bool {
