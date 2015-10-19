@@ -24,3 +24,25 @@ class SimpleContainer: Container {
         return self.id
     }
 }
+
+
+extension NedlloydContainer: Container {
+
+    public func containerId() -> Int32 {
+        return self.label
+    }
+}
+
+extension MaerskContainer: Container {
+    
+    public func containerId() -> Int32 {
+        return self.id
+    }
+}
+
+extension KLineContainer: Container {
+    
+    public func containerId() -> Int32 {
+        return self.serialNumber
+    }
+}

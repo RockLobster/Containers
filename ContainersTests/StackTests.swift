@@ -47,6 +47,12 @@ class StackTests: QuickSpec {
                 expect(stack.pop()).to(beNil())
             }
             
+            it("can add containers from all three brands") {
+                stack.push(KLineContainer(serialNumber: 1))
+                stack.push(MaerskContainer(id: 2))
+                stack.push(NedlloydContainer(label: 3))
+            }
+            
             describe("after adding a container") {
                 
                 var singleContainer: Container!
